@@ -1112,6 +1112,7 @@ class Department(models.Model):
 
         cuts = [
             openspending_api.get_adjustment_kind_ref() + ':' + '"Total"',
+            openspending_api.get_financial_year_ref() + ':' + ';'.join(financial_year_starts),
         ]
         drilldowns = [
             openspending_api.get_financial_year_ref(),
@@ -1123,13 +1124,18 @@ class Department(models.Model):
             cuts=cuts, drilldowns=drilldowns)
         result = openspending_api.filter_dept(budget_results, self.name)
 
+        dept_aggregate_url = openspending_api.aggregate_url(
+            cuts=cuts,
+            drilldowns=drilldowns,
+        )
+
         filtered_cells = openspending_api.filter_by_ref_exclusion(
             result['cells'],
             openspending_api.get_programme_name_ref(),
             DIRECT_CHARGE_NRF,
         )
 
-        result_cells = openspending_api.aggregate_by_three_ref(
+        result_cells = openspending_api.aggregate_by_ref(
             [openspending_api.get_department_name_ref(),
              openspending_api.get_financial_year_ref(),
              openspending_api.get_phase_ref()],
@@ -1181,6 +1187,7 @@ class Department(models.Model):
             return {
                 'expenditure': expenditure,
                 'dataset_detail_page': dataset.get_url_path(),
+                'department_data_csv': csv_url(dept_aggregate_url),
             }
         else:
             logger.warning("Missing expenditure time series data for %r budget year %s",
@@ -1201,6 +1208,7 @@ class Department(models.Model):
 
         cuts = [
             openspending_api.get_adjustment_kind_ref() + ':' + '"Total"',
+            openspending_api.get_financial_year_ref() + ':' + ';'.join(financial_year_starts),
         ]
         drilldowns = [
             openspending_api.get_financial_year_ref(),
@@ -1211,6 +1219,11 @@ class Department(models.Model):
         budget_results = openspending_api.aggregate(
             cuts=cuts, drilldowns=drilldowns)
         result = openspending_api.filter_dept(budget_results, self.name)
+
+        dept_aggregate_url = openspending_api.aggregate_url(
+            cuts=cuts,
+            drilldowns=drilldowns,
+        )
 
         if result['cells']:
             prog_names = [cell[openspending_api.get_programme_name_ref()] for cell in result['cells']]
@@ -1260,6 +1273,7 @@ class Department(models.Model):
             return {
                 'programmes': programmes.values(),
                 'dataset_detail_page': dataset.get_url_path(),
+                'department_data_csv': csv_url(dept_aggregate_url),
             }
         else:
             logger.warning("Missing expenditure time series data for %r budget year %s",
