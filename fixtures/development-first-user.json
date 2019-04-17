@@ -1,0 +1,30 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$0lM3TbZBY94V$xirXvIgKYBggcH0tMDjE6GTjoS6KYuim4sl7UbpYsrA=",
+        "last_login": "2019-04-16T05:45:02Z",
+        "is_superuser": true,
+        "username": "admin@localhost",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@localhost",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-04-15T20:06:18Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "email": "admin@localhost",
+        "verified": true,
+        "primary": true
+    }
+}
+]

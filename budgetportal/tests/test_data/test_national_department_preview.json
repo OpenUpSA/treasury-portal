@@ -1,0 +1,129 @@
+{
+  "departments": [
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "_count": 755,
+      "value.sum": 7164998000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Arts and Culture",
+      "_count": 365,
+      "value.sum": 4372264000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Basic Education",
+      "_count": 494,
+      "value.sum": 22722437000.0
+    }
+  ],
+  "programmes": [
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "programme_number.programme": "Administration",
+      "_count": 217,
+      "value.sum": 923178000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "programme_number.programme": "Agricultural Production, Health and Food Safety",
+      "_count": 137,
+      "value.sum": 2367078000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "programme_number.programme": "Fisheries",
+      "_count": 20,
+      "value.sum": 487811000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "programme_number.programme": "Food Security and Agrarian Reform",
+      "_count": 129,
+      "value.sum": 2037889000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "programme_number.programme": "Forestry and Natural Resources Management",
+      "_count": 143,
+      "value.sum": 1075123000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "programme_number.programme": "Trade Promotion and Market Access",
+      "_count": 109,
+      "value.sum": 273919000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Arts and Culture",
+      "programme_number.programme": "Administration",
+      "_count": 97,
+      "value.sum": 300844000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Arts and Culture",
+      "programme_number.programme": "Arts and Culture Promotion and Development",
+      "_count": 76,
+      "value.sum": 1184413000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Arts and Culture",
+      "programme_number.programme": "Heritage Promotion and Preservation",
+      "_count": 103,
+      "value.sum": 2470980000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Arts and Culture",
+      "programme_number.programme": "Institutional Governance",
+      "_count": 89,
+      "value.sum": 416027000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Basic Education",
+      "programme_number.programme": "Administration",
+      "_count": 136,
+      "value.sum": 450476000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Basic Education",
+      "programme_number.programme": "Curriculum Policy, Support and Monitoring",
+      "_count": 90,
+      "value.sum": 1905011000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Basic Education",
+      "programme_number.programme": "Educational Enrichment Services",
+      "_count": 63,
+      "value.sum": 7105128000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Basic Education",
+      "programme_number.programme": "Planning, Information and Assessment",
+      "_count": 128,
+      "value.sum": 11971342000.0
+    },
+    {
+      "government.government": "South Africa",
+      "vote_number.department": "Basic Education",
+      "programme_number.programme": "Teachers, Education Human Resources and Institutional Development",
+      "_count": 77,
+      "value.sum": 1290480000.0
+    }
+  ]
+}

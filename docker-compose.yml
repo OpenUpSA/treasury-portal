@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=budgetportal
+      - POSTGRES_DB=budgetportal
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - DATABASE_URL=postgresql://budgetportal@db/budgetportal
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  db-data:

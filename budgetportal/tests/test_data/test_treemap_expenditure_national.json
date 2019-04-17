@@ -1,53 +1,25 @@
 {
   "complete": [
     {
-      "budget_phase.budget_phase": "Adjusted appropriation",
+      "budget_phase.budget_phase": "Main appropriation",
+      "vote_number.department": "Agriculture, Forestry and Fisheries",
+      "_count": 517,
+      "financial_year.financial_year": 2019,
+      "value.sum": 7664889000
+    },
+    {
+      "budget_phase.budget_phase": "Main appropriation",
       "vote_number.department": "Arts and Culture",
-      "_count": 239,
-      "financial_year.financial_year": 2018,
-      "value.sum": 3826047000
+      "_count": 246,
+      "financial_year.financial_year": 2019,
+      "value.sum": 4617485000
     },
     {
-      "budget_phase.budget_phase": "Adjusted appropriation",
+      "budget_phase.budget_phase": "Main appropriation",
       "vote_number.department": "Basic Education",
-      "_count": 372,
-      "financial_year.financial_year": 2018,
-      "value.sum": 21286426000
-    },
-    {
-      "budget_phase.budget_phase": "Adjusted appropriation",
-      "vote_number.department": "Civilian Secretariat",
-      "_count": 130,
-      "financial_year.financial_year": 2018,
-      "value.sum": 1290888000
-    },
-    {
-      "budget_phase.budget_phase": "Adjusted appropriation",
-      "vote_number.department": "Communications",
-      "_count": 439,
-      "financial_year.financial_year": 2018,
-      "value.sum": 70815477000
-    },
-    {
-      "budget_phase.budget_phase": "Adjusted appropriation",
-      "vote_number.department": "Cooperative Governance and Traditional Affairs",
-      "_count": 474,
-      "financial_year.financial_year": 2018,
-      "value.sum": 20588554000
-    },
-    {
-      "budget_phase.budget_phase": "Adjusted appropriation",
-      "vote_number.department": "Correctional Services",
-      "_count": 1486,
-      "financial_year.financial_year": 2018,
-      "value.sum": 45088161000
-    },
-    {
-      "budget_phase.budget_phase": "Adjusted appropriation",
-      "vote_number.department": "Defence and Military Veterans",
-      "_count": 126,
-      "financial_year.financial_year": 2018,
-      "value.sum": 885778000
+      "_count": 326,
+      "financial_year.financial_year": 2019,
+      "value.sum": 24504531000
     }
   ]
 }

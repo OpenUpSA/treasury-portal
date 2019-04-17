@@ -6,21 +6,8 @@ This app provides Single Sign-on (SSO) and support for maintaining correct and c
 Setting up Development environment
 -----------------------
 
-Requires a recent Python 2.7 and Postgres 9 point release.
-
-Install system dependencies for psycopg2. e.g. on Ubuntu:
-
 ```
-sudo apt-get update
-sudo apt-get install libpq-dev python-dev
-```
-
-Install python dependencies
-
-```
-virtualenv --no-site-packages env
-source env/bin/activate
-pip install -r requirements.txt
+docker-compose up db
 ```
 
 Add the dokku remote to you local clone
@@ -35,17 +22,33 @@ loading a dump from elsewhere:
 If you're setting up a new database:
 
 ```
-python manage.py migrate
-python manage.py createsuperuser
+docker-compose run --rm app python manage.py migrate
+docker-compose run --rm app python manage.py loaddata fixtures/development-first-user
 ```
 
 Then run the server
 
 ```
-python manage.py runserver_plus
+docker-compose up
 ```
 
-### Development
+Now you can login with initial the *development superuser*:
+
+Username: `admin@localhost`
+Password: `password`
+
+A fixture is needed to set this up instead of `createsuperuser` because Django Allauth is configured to require verified email addresses.
+
+### Load data
+
+Load an initial set of financial years, spheres and governments. You might need to add more recent ones manually in the admin interface.
+
+```
+docker-compose run --rm app python manage.py loaddata fixtures/development-first-user
+docker-compose run --rm app python manage.py load_departments 2019-20 national /code/departments-2019-20.csv
+```
+
+### Development best practises
 
 * Put javascript into ``budgetportal/static/javascript/app.js``
 * Put SCSS stylesheets into ``budgetportal/static/stylesheets/app.scss``
