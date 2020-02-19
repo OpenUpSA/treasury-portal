@@ -338,12 +338,12 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "DEBUG",
+            "level": "DEBUG" if DEBUG else "INFO",
             "class": "logging.StreamHandler",
             "formatter": "simple",
         },
     },
-    "root": {"handlers": ["console"], "level": "INFO"},
+    "root": {"handlers": ["console"], "level": "DEBUG" if DEBUG else "INFO"},
     "loggers": {
         "budgetportal": {"level": "DEBUG" if DEBUG else "INFO"},
         "django": {"level": "DEBUG" if DEBUG else "INFO"},

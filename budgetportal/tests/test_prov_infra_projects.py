@@ -17,6 +17,7 @@ from rest_framework.test import APITransactionTestCase
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from django.core.management import call_command
 
 EMPTY_FILE_PATH = os.path.abspath(
     "budgetportal/tests/test_data/test_prov_infra_projects_empty_file.xlsx"
@@ -25,6 +26,7 @@ EMPTY_FILE_PATH = os.path.abspath(
 
 class ProvInfraProjectIRMSnapshotTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         file_path = os.path.abspath(
             ("budgetportal/tests/test_data/test_import_prov_infra_projects-update.xlsx")
         )
@@ -64,6 +66,7 @@ class ProvInfraProjectIRMSnapshotTestCase(APITransactionTestCase):
 class ProvInfraProjectDetailPageTestCase(BaseSeleniumTestCase):
     def setUp(self):
         super(ProvInfraProjectDetailPageTestCase, self).setUp()
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.fin_year = FinancialYear.objects.create(slug="2050-51", published=True)
         self.quarter = Quarter.objects.create(number=3)
@@ -276,6 +279,7 @@ class ProvInfraProjectDetailPageTestCase(BaseSeleniumTestCase):
 class ProvInfraProjectSearchPageTestCase(BaseSeleniumTestCase):
     def setUp(self):
         super(ProvInfraProjectSearchPageTestCase, self).setUp()
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infra-project-list")
         self.wait = WebDriverWait(self.selenium, 5)
@@ -376,6 +380,7 @@ class ProvInfraProjectSearchPageTestCase(BaseSeleniumTestCase):
 
 class ProvInfraProjectAPIDepartmentTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -455,6 +460,7 @@ class ProvInfraProjectAPIDepartmentTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIProvinceTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -564,6 +570,7 @@ class ProvInfraProjectAPIProvinceTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIStatusTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -643,6 +650,7 @@ class ProvInfraProjectAPIStatusTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIFundingSourceTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -722,6 +730,7 @@ class ProvInfraProjectAPIFundingSourceTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIProjectNameTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -794,6 +803,7 @@ class ProvInfraProjectAPIProjectNameTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIMunicipalityTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -869,6 +879,7 @@ class ProvInfraProjectAPIMunicipalityTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIContractorTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -944,6 +955,7 @@ class ProvInfraProjectAPIContractorTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPISearchMultipleFieldsTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.facet_url = reverse("provincial-infrastructure-project-api-facets")
@@ -1001,6 +1013,7 @@ class ProvInfraProjectAPISearchMultipleFieldsTestCase(APITransactionTestCase):
 
 class ProvInfraProjectAPIURLPathTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.fin_year = FinancialYear.objects.create(slug="2030-31", published=True)
         self.quarter = Quarter.objects.create(number=1)
@@ -1057,6 +1070,7 @@ class ProvInfraProjectAPIURLPathTestCase(APITransactionTestCase):
 
 class ProvInfraProjectSnapshotTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file_1 = open(EMPTY_FILE_PATH)
         self.file_2 = open(EMPTY_FILE_PATH)
         self.project = ProvInfraProject.objects.create(IRM_project_id=1)
@@ -1113,6 +1127,7 @@ class ProvInfraProjectSnapshotTestCase(APITransactionTestCase):
 
 class ProvInfraProjectSnapshotDifferentYearsTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file_1 = open(EMPTY_FILE_PATH)
         self.file_2 = open(EMPTY_FILE_PATH)
         self.project = ProvInfraProject.objects.create(IRM_project_id=1)
@@ -1157,6 +1172,7 @@ class ProvInfraProjectSnapshotDifferentYearsTestCase(APITransactionTestCase):
 
 class ProvInfraProjectFullTextSearchTestCase(APITransactionTestCase):
     def setUp(self):
+        call_command("clear_index", "--noinput")
         self.file = open(EMPTY_FILE_PATH)
         self.url = reverse("provincial-infrastructure-project-api-list")
         self.fin_year = FinancialYear.objects.create(slug="2030-31")

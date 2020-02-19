@@ -67,6 +67,8 @@ services:
       dockerfile: Dockerfile-test
     command: bin/wait-for-db.sh coverage run --source='budgetportal' manage.py test
     environment:
+      - DJANGO_DEBUG=FALSE
+      - DJANGO_SECRET_KEY=testsecret
       - DATABASE_URL=postgresql://budgetportal:devpassword@db/budgetportal
       - AWS_ACCESS_KEY_ID=minio-access-key
       - AWS_SECRET_ACCESS_KEY=minio-secret-key
