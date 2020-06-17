@@ -94,6 +94,13 @@
             {% include 'components/department-budgets/ArrowButtons/index.html' with link_1="#section-plan" link_2="#section-implement" link_3="#section-review" %}
         </div>
 
+
+        <!-- ##################################################
+             ###################            ###################
+             ###################    PLAN    ###################
+             ###################            ###################
+             ################################################## -->
+
         <div class="u-marginTop100">
             <div class="DeptSectionHead DeptSectionHead--green" id="section-plan">
                 Plan
@@ -197,6 +204,13 @@
           {% include 'scenes/department/ProcurementTeaser/procurement-teaser.html' %}
         </div>
 
+
+        <!-- #######################################################
+             ###################                 ###################
+             ###################    IMPLEMENT    ###################
+             ###################                 ###################
+             ####################################################### -->
+
         <div class="u-marginTop100">
             <div class="DeptSectionHead DeptSectionHead--orange" id="section-implement">
                 Implement
@@ -242,17 +256,22 @@
           </div>
 
         </div>
-        {% else %}
-        <div class="Message Message--secondary u-marginBottom20 u-marginTop25">
-          <div class="Message-content">
-            {% include 'components/Icon/index.html' with  type="info" size="l" %}
-            <span class="Message-heading">
-              Please note
-            </span>
-          </div>
-          <div class="Message-text Message-text--secondary">Implementation data coming soon.</div>
+        {% endif %} {# end if infra_enabled #}
+
+        <div class="js-tooltips">
+          {% include 'scenes/department/PerformanceTeaser/performance-teaser.html' %}
         </div>
-        {% endif %}
+
+        <div class="js-tooltips">
+          {% include 'scenes/department/InYearTeaser/in-year-teaser.html' %}
+        </div>
+
+
+        <!-- ####################################################
+             ###################              ###################
+             ###################    REVIEW    ###################
+             ###################              ###################
+             #################################################### -->
 
         <div class="u-marginTop100">
             <div class="DeptSectionHead DeptSectionHead--purple" id="section-review">

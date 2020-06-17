@@ -1,0 +1,44 @@
+<h3 class="Title Title--section ">In-year revenue and expenditure reporting</h3>
+
+<div class="Grid has-twoColumn">
+
+  <div class="Preview">
+    <a href="/datasets/in-year-spending">
+      <span class="Preview-heading Preview-heading--link">In-year spending data</span>
+    </a>
+    <div class="Preview-content">
+      Download monthly in-year spending data. This is classified by department, programme and economic classification, as well as the Standard Chart of Accounts detail level.
+    </div>
+  </div>
+
+  {% if sphere.slug == "national" %}
+  <div class="Preview">
+    <a href="http://www.treasury.gov.za/comm_media/press/monthly/monthly_2019.aspx">
+      <span class="Preview-heading Preview-heading--link">National in-year reporting</span>
+    </a>
+    <div class="Preview-content">
+      You can find in-year summary information about the National Revenue Fund and national departments in the Section 32 publications.
+      <ul>
+        <li>Monthly statements of the National Revenue, Expenditure and Borrowing</li>
+        <li>Monthly summary of cash flow</li>
+        <li>Additional Information on National Revenue Fund receipts/payments</li>
+      </ul>
+    </div>
+  </div>
+  {% elif sphere.slug == "provincial" %}
+  <div class="Preview">
+    <a href="http://www.treasury.gov.za/publications/PiP/default.aspx">
+      <span class="Preview-heading Preview-heading--link">Provincial in-year reporting</span>
+    </a>
+    <div class="Preview-content">
+      You can find in-year summary information on provincial revenue, expenditure, and sectoral reports in the Section 32 publications.
+
+      <ul>
+        <li>Quarterly budgets and expenditure report</li>
+        <li>Quarterly statement of receipts and payments</li>
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+
+</div>

@@ -16,9 +16,13 @@
     &.has-twoColumn {
       grid-template-columns: 1fr 1fr;
     }
-    
+
     &.has-threeColumn {
-      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &.has-fourColumn {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     &.has-rightSidebar {
